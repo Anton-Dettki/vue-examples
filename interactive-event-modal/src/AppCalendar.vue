@@ -48,6 +48,10 @@ const calendarApp = shallowRef(createCalendar({
 
 <template>
   <div>
-    <ScheduleXCalendar :calendar-app="calendarApp" />
+    <ScheduleXCalendar :calendar-app="calendarApp" >
+      <template #eventModal="{ calendarEvent }">
+        This should be displayed when clicking on an Event, this is fully functional with the basic eventModal
+      </template>
+    </ScheduleXCalendar>
   </div>
 </template>
