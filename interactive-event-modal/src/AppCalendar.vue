@@ -53,6 +53,7 @@ const calendarApp = shallowRef(createCalendar({
     <ScheduleXCalendar :calendar-app="calendarApp" >
       <template #interactiveModalAdditionalFields="{ calendarEvent }">
         This should be displayed when clicking on an Event, this is fully functional with the basic eventModal
+        <button @click="console.log(calendarEvent)" style="color: red"> CLICK 4 INFO </button>
         {{ calendarEvent.customAtt }}
       </template>
     </ScheduleXCalendar>
