@@ -35,12 +35,14 @@ const calendarApp = shallowRef(createCalendar({
       title: 'Event 1',
       start: '2025-03-01',
       end: '2025-03-01',
+      customAtt: "CustomAtt"
     },
     {
       id: 2,
       title: 'Event 2',
       start: '2025-03-02 12:00',
       end: '2025-03-02 13:00',
+      customAtt: "CustomAtt"
     },
   ],
 }))
@@ -49,8 +51,9 @@ const calendarApp = shallowRef(createCalendar({
 <template>
   <div>
     <ScheduleXCalendar :calendar-app="calendarApp" >
-      <template #eventModal="{ calendarEvent }">
+      <template #interactiveModalAdditionalFields="{ calendarEvent }">
         This should be displayed when clicking on an Event, this is fully functional with the basic eventModal
+        {{ calendarEvent.customAtt }}
       </template>
     </ScheduleXCalendar>
   </div>

@@ -45,6 +45,8 @@ const countryInputField = createInputField({
 
 export const eventModal = createInteractiveEventModal({
   eventsService,
+  canOpenModal: (event) => { return true },
+  hideTitle: true,
 
   onAddEvent: (event) => {
     console.log(event)
